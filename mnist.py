@@ -20,8 +20,9 @@ test_images = []
 for image in data_list:
     test_images.append([int(pixel) for pixel in image.split(",")])
 
+
 def show_digit(pixels):
-    image_arr = np.asfarray(pixels[1:]).reshape((28,28))
+    image_arr = np.asfarray(pixels[1:]).reshape((28, 28))
     matplotlib.pyplot.imshow(image_arr, cmap="Greys", interpolation="None")
     matplotlib.pyplot.show()
 
@@ -31,11 +32,12 @@ def prep_data(images):
     targets = []
     for (i, image) in enumerate(images):
         scaled_inputs.append((np.asfarray(image[1:]) / 255 * 0.99) + 0.01)
-        
+
         targets.append(np.zeros(10) + 0.01)
         digit = int(image[0])
         targets[i][digit] = 0.99
     return scaled_inputs, targets
+
 
 def test_model(nn):
     tests, labels = prep_data(test_images)
@@ -47,7 +49,7 @@ def test_model(nn):
         correct = np.argmax(labels[i], axis=0)
         if correct == index:
             correct_count += 1
-    return (correct_count/i)
+    return correct_count / i
 
 
 if __name__ == "__main__":
