@@ -8,5 +8,5 @@
 - More implementations.
 - Different types of networks: convolutional, recurrent etc..
 
-
-
+## Sources
+- [Make Your Own Neural Network by Tariq Rashid](https://www.amazon.com/Make-Your-Own-Neural-Network-ebook/dp/B01EER4Z4G)
